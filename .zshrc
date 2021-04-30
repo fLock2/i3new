@@ -1,5 +1,4 @@
-source /usr/share/zsh/share/antigen.zsh
-
+source /home/flock/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -14,42 +13,19 @@ antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
-antigen theme denysdovhan/spaceship-prompt 
+antigen theme minimal 
 # Tell Antigen that you're done.
 antigen apply 
-SPACESHIP_TIME_SHOW=true
-SPACESHIP_BATTERY_THRESHOLD=75
-SPACESHIP_USER_SHOW=always
-SPACESHIP_USER_COLOR=blue
-SPACESHIP_HOST_SHOW=always
-# IP address lookup
-alias whatismyip="whatsmyip"
-function whatsmyip ()
-{
-	# Dumps a list of all IP addresses for every device
-	# /sbin/ifconfig |grep -B1 "inet addr" |awk '{ if ( $1 == "inet" ) { print $2 } else if ( $2 == "Link" ) { printf "%s:" ,$1 } }' |awk -F: '{ print $1 ": " $3 }';
 
-	# Internal IP Lookup
-	echo -n "Internal IP: " ; /sbin/ifconfig eth0 | grep "inet addr" | awk -F: '{print $2}' | awk '{print $1}'
-
-	# External IP Lookup
-	echo -n "External IP: " ; wget http://smart-ip.net/myip -O - -q
-}
-
-# Show current network information
-netinfo ()
-{
-	echo "--------------- Network Information ---------------"
-	/sbin/ifconfig | awk /'inet addr/ {print $2}'
-	echo ""
-	/sbin/ifconfig | awk /'Bcast/ {print $3}'
-	echo ""
-	/sbin/ifconfig | awk /'inet addr/ {print $4}'
-
-	/sbin/ifconfig | awk /'HWaddr/ {print $4,$5}'
-	echo "---------------------------------------------------"
-}
-
+alias gcl="git clone"
+alias gcm="git commit -m"
+alias gpl="git pull"
+alias gph="git push origin master"
+alias gad="git add"
+alias grm="git remove"
+alias srst="scrot ~/Pictures/Screenshots/%b%d::%H%M%S.png" 
+alias crst="scrot -s ~/Pictures/Screenshots/%b%d::%H%M%S.png"
+alias vim="nvim"
 # Copy file with a progress bar
 cpp()
 {
