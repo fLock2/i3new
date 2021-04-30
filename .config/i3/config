@@ -175,7 +175,7 @@ exec_always --no-startup-id nm-applet
 exec_always --no-startup-id compton -CGb --config ~/.config/compton/compton.conf
 # Apply a background different than the one used by wal
 # If this isn't needed, remove it and remove -n flag from the above command
-exec_always --no-startup-id feh --bg-fill ~/Pictures/Wal/bg2.png
+exec_always --no-startup-id feh --bg-fill ~/Pictures/Wal/bg4.bmp
 
 # exec_always --no-startup-id sh ~/xtoalacritty.sh
 
